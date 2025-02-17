@@ -2,9 +2,9 @@ import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import Header from "../../components/Header/Header";
 import Input from "../../components/Input/Input";
-import ChatRoom from "../../components/ChatRoom/ChatRoom";
 import { io } from "socket.io-client";
 import Connecteduser from "../../components/ConnectedUser/Connecteduser";
+import Chatroom from "../../components/Chatroom/Chatroom"
 
 const Home = () => {
   const socket = io("http://127.0.0.1:3000");
@@ -21,7 +21,7 @@ const Home = () => {
           <Input />
           <Connecteduser />
         </div>
-        {selected && <ChatRoom socket={socket} />}
+        {selected && <Chatroom socket={socket} />}
       </div>
     </div>
   );
