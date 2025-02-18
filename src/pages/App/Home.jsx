@@ -10,11 +10,15 @@ import ChatArea from "../../components/ChatArea/ChatArea";
 const Home = () => {
   const socket = io("https://backend-for-chat-app.vercel.app", {
     transports: ["websocket"],
+    withCredentials: true,
   });
   const user = useSelector((state) => state?.authreducer?.user);
   const selected = useSelector((state) => state?.chatreducer?.selectedchat);
   useEffect(() => {
     socket.emit("join-room", user?._id);
+    socket.on('connect_error', (error) => {
+    console.error('Connection error:', error);
+});
   }, [selected]);
   return (
     <div>
