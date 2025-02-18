@@ -9,7 +9,7 @@ import ChatArea from "../../components/ChatArea/ChatArea";
 
 
 const Home = () => {
-  const socket = io("https://backend-for-chat-app.vercel.app/chitshat");
+  const socket = io("https://backend-for-chat-app.vercel.app");
   const user = useSelector((state) => state?.authreducer?.user);
   const selected = useSelector((state) => state?.chatreducer?.selectedchat);
   useEffect(() => {
