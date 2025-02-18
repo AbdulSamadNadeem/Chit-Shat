@@ -27,9 +27,12 @@ export const loginuser = async (endpoint , credentials , navigator) => {
         const response = await ApiInstance.post(endpoint , credentials)
         if(response.status === 200){
             toast.success('SignIn Successfully')
+            const token = response.data.token
+            localStorage.setItem('token' , token)
             setTimeout(() => {
                 navigator('/home')
             }, 2000);
+            console.log(response)
         }else{
             toast.error('Something went wrong')
         }

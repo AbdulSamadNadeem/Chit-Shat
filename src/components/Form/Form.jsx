@@ -59,10 +59,6 @@ const Form = ({type}) => {
         try{
            
              const response = await loginuser('/auth/loginuser' , data , navigate)
-              if(response.status === 201){
-                const token = response.data.token
-                localStorage.setItem('token' , token)
-              }
         }catch(err){
           console.log(err.message)
         }
