@@ -4,7 +4,9 @@ import Header from "../../components/Header/Header";
 import Input from "../../components/Input/Input";
 import { io } from "socket.io-client";
 import Connecteduser from "../../components/ConnectedUser/Connecteduser";
+
 import ChatArea from "../../components/ChatArea/ChatArea";
+
 
 const Home = () => {
   const socket = io("http://127.0.0.1:3000");
@@ -21,7 +23,10 @@ const Home = () => {
           <Input />
           <Connecteduser />
         </div>
+
+
         {selected && <ChatArea socket={socket} />}
+
       </div>
     </div>
   );

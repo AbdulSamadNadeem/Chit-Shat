@@ -4,6 +4,7 @@ import {useSelector } from "react-redux";
 import { getAllmessages, sendMessage } from "../../API/RouteHandlers";
 
 const ChatArea = ({socket}) => {
+
   const [message, setMessage] = useState("");
   const [allmessage, setallMessage] = useState([]);
   const [typing, settyping] = useState(false);
@@ -142,3 +143,4 @@ const ChatArea = ({socket}) => {
 };
 
 export default ChatArea;
+
