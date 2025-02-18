@@ -9,7 +9,9 @@ import ChatArea from "../../components/ChatArea/ChatArea";
 
 
 const Home = () => {
-  const socket = io("https://backend-for-chat-app.vercel.app");
+  const socket = io("http://127.0.0.1:3000", {
+    transports: ["websocket"],
+  });
   const user = useSelector((state) => state?.authreducer?.user);
   const selected = useSelector((state) => state?.chatreducer?.selectedchat);
   useEffect(() => {
