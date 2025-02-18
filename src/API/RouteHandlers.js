@@ -11,8 +11,6 @@ export const registeruser = async (endpoint , credentials , navigator) => {
         })
         if(response.status === 201){
             toast.success('Signup Successfully')
-             const token = response.data.token
-                localStorage.setItem('token' , token)
             setTimeout(() => {
                 navigator('/')
             }, 2000);
@@ -29,6 +27,8 @@ export const loginuser = async (endpoint , credentials , navigator) => {
         const response = await ApiInstance.post(endpoint , credentials)
         if(response.status === 200){
             toast.success('SignIn Successfully')
+             const token = response.data.token
+                localStorage.setItem('token' , token)
             setTimeout(() => {
                 navigator('/home')
             }, 2000);
