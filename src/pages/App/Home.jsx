@@ -17,6 +17,9 @@ const Home = () => {
   const selected = useSelector((state) => state?.chatreducer?.selectedchat);
   useEffect(() => {
     socket.emit("join-room", user?._id);
+    socket.on('connect_error', (error) => {
+    console.error('Connection error:', error);
+});
   }, [selected]);
   return (
     <div>
