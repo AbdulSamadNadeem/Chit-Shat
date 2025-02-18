@@ -2,7 +2,7 @@ import axios from "axios";
 import { useNavigate } from "react-router";
 
 const ApiInstance = axios.create({
-  baseURL: "https://backend-for-chat-app.vercel.app/chitshat",
+  baseURL: "http://127.0.0.1:3000/chitshat",
   headers: {
     "Content-Type": "application/json",
   },
