@@ -50,7 +50,7 @@ const ChatArea = ({socket}) => {
     if (selected?._id) {
       fetchAllmessages();
     }
-    socket.on('recieve-message'  , (data)=>{
+    socket.on('receive-message'  , (data)=>{
       setallMessage((prev) => [...prev , data] , )
     })
     socket.on('started' , (data)=>{
